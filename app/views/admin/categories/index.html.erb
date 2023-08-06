@@ -1,0 +1,28 @@
+<section class="admin-categories-index">
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Admin &raquo; All Categories</h1>
+    </div>
+
+    <div class="well">
+      <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
+    </div>
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @categories %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</section>
