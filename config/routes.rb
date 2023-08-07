@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # These routes are for showing users a login form, logging them in, and logging them out.
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  # Route for handling logout
+  delete '/logout', to: 'sessions#destroy', as: :logout
 
   # User Registration Routes
   get '/signup' => 'users#new'
