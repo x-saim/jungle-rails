@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   root to: 'products#index'
   get '/about', to: 'about#index', as: 'about_index'
 
+  # These routes are for showing users a login form, logging them in, and logging them out.
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
   # User Registration Routes
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
