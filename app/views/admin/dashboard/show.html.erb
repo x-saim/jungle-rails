@@ -1,15 +1,16 @@
-<!-- app/views/admin/dashboard/show.html.erb -->
 <div class="container mt-4">
-  <h1>Admin Dashboard</h1>
+  <h1>Admin &raquo; Dashboard</h1>
 
   <div class="row g-4">
     <div class="col-md-6">
-      <div class="card bg-primary text-white">
-        <div class="card-body">
-          <h5 class="card-title">Total Categories</h5>
-          <p class="card-text display-4"><%= @category_count %></p>
+      <%= link_to admin_categories_path, style: "text-decoration: none;" do %>
+        <div class="card bg-primary text-white">
+          <div class="card-body">
+            <h5 class="card-title">Total Categories</h5>
+            <p class="card-text display-4"><%= @category_count %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
 
     <div class="col-md-6">
