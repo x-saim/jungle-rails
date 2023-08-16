@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   
-    describe 'Validations' do
+    describe 'Product Validations' do
       it 'is valid with valid attributes' do
 
         category = Category.create(name: 'Test Category')
