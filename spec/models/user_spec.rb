@@ -96,5 +96,18 @@ RSpec.describe User, type: :model do
       expect(user).not_to be_valid
       expect(user.errors[:last_name]).to include("can't be blank")
     end
+
+    #Password minimum length of 6
+    it 'is not valid with a short password' do
+      user = User.new(
+        first_name: 'John',
+        last_name: 'Doe',
+        email: 'test@example.com',
+        password: 'short',
+        password_confirmation: 'short'
+      )
+      expect(user).not_to be_valid
+      expect(user.errors[:password]).to include("is too short (minimum is 6 characters)")
+    end
   end
 end
